@@ -1,3 +1,0 @@
-## This is a test...
-
-Go to proj3 in a different repo: [click here](https://jinan789.github.io/jinan2/jinan) 
