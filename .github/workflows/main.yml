@@ -21,6 +21,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      #test
+      - name: Test
+        run: |
+          touch 123.txt
+          git add 123.txt
+          git commit -m "1"
+      
       # Update references
       - name: Git Sumbodule Update
         run: |
