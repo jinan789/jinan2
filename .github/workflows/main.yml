@@ -35,5 +35,6 @@ jobs:
           touch 123.txt
           git add 123.txt
           git commit -m "1"
+          git push origin gh-pages
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
