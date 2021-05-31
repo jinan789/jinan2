@@ -3,16 +3,16 @@ name: 'Submodules_Sync'
 on:
   # Allows you to run this workflow manually from the Actions tab or through HTTP API
   workflow_dispatch:
-
+      
 jobs:
-  sync:
-    name: 'Submodules_Sync'
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checkout the repository to the GitHub Actions runner
-    - name: Checkout
-      uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
 
