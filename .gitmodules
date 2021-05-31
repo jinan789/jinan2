@@ -1,0 +1,3 @@
+[submodule "jinan"]
+	path = jinan
+	url = https://github.com/jinan789/jinan
