@@ -1,0 +1,104 @@
+{"0": {
+    "doc": "Customizing",
+    "title": "Customizing",
+    "content": "Regardless of which setup you have used, you will now need to customize the virtual machine. Log in to the virtual machine as the user customizer with the password customizer (same username and password), and follow the subsequent prompts. Note that customization requires your partner’s Cal ID. Both you and your partner should customize your VM using the same IDs (the order of the IDs does not matter). If you want to do some initial exploration by yourself before you’ve finalized your team, you can start off using just your ID for this customization step. Once you have your team in place, you’ll need to start again with a clean VM image customized as mentioned here. Any exploits you’ve developed for your private VM image will require porting (re-determination of the addresses to use in them). This should go quickly once you understand the exploit. If the IDs used by the VM are incorrect, you and your partner may fail the autograder tests. Make sure that you include your EXACT ID number. Once you have finished customizing your virtual machine, you will receive the username and password for the first question. ",
+    "url": "http://localhost:4000/customizing.html",
+    "relUrl": "/customizing.html"
+  },"1": {
+    "doc": "Getting Started",
+    "title": "Getting Started",
+    "content": ". | Option 1: Local Setup (VirtualBox) | Option 2: Online Setup (the Hive) | . There are two options to set up a virtual machine for the project. There is no difference which option you choose. Option 2 is easier to set up, but requires a stable Internet connection. If you run into any issues with either option, please check the FAQ on Piazza first. ",
+    "url": "http://localhost:4000/getting-started.html",
+    "relUrl": "/getting-started.html"
+  },"2": {
+    "doc": "Getting Started",
+    "title": "Option 1: Local Setup (VirtualBox)",
+    "content": "This option is recommended if you do not have a stable Internet connection. To work with this option, you will need to install VirtualBox and an SSH client (on Windows, use Putty or Git Bash). On Linux and Mac, you can install these programs from your package manager (e.g., apt or brew). Open VirtualBox, and download and import the VM image (pwnable-sp21.ova) via File -&gt; Import Applicance. You can now start the VM, in which you will run the vulnerable programs and their exploits. You can SSH into the VM by running ssh -p 16121 USERNAME@127.0.0.1 on your local machine, replacing USERNAME depending on the question. To make sure the VM works, run ssh -p 16121 customizer@127.0.0.1. If you see a prompt for customizer@127.0.0.1’s password:, you are ready to start the project. ",
+    "url": "http://localhost:4000/getting-started.html#option-1-local-setup-virtualbox",
+    "relUrl": "/getting-started.html#option-1-local-setup-virtualbox"
+  },"3": {
+    "doc": "Getting Started",
+    "title": "Option 2: Online Setup (the Hive)",
+    "content": "To work with this option, you will need an EECS instructional account (you should have set one up in HW1, Q2.2). To start the VM, execute the following command in your terminal: . $ ssh -t cs161-XXX@hiveYY.cs.berkeley.edu \\~cs161/proj1/start . Replace XXX with the last three letters of your instructional account, and YY with the number of a hive machine (1-20). For best experience, use Hivemind to select a hive machine with low load. (Machines 21-30 are reserved for CS61C, so please only use machines 1-20.) . If everything works successfully, a lot of output will scroll by (from the virtual machine booting up). If you see a pwnable login: prompt, you are ready to start the project. Note: Normally when you are done with the VM, you can simply close the terminal window. Some events might cause the VM to become inaccessible. In this case you can force close the VM by running the following command on your local computer: . $ ssh cs161-XXX@hiveYY.cs.berkeley.edu \\~cs161/proj1/stop . ",
+    "url": "http://localhost:4000/getting-started.html#option-2-online-setup-the-hive",
+    "relUrl": "/getting-started.html#option-2-online-setup-the-hive"
+  },"4": {
+    "doc": "Exploiting Memory Vulnerabilities",
+    "title": "Exploiting Memory Vulnerabilities",
+    "content": "In this project, you will be exploiting a series of vulnerable programs on a virtual machine. You may work in teams of 1 or 2 students. This project has a story component. Reading it is not necessary for project completion. ",
+    "url": "http://localhost:4000/",
+    "relUrl": "/"
+  },"5": {
+    "doc": "Question 2: Spica",
+    "title": "Spica (Launched 1977)",
+    "content": "Password: alanguage . | Starter files | Your task | Debugging | Deliverables | . ",
+    "url": "http://localhost:4000/question2.html#spica-launched-1977",
+    "relUrl": "/question2.html#spica-launched-1977"
+  },"6": {
+    "doc": "Question 2: Spica",
+    "title": "Starter files",
+    "content": "Log into the spica account on the VM using the password you learned in the previous question. ls to see the starter files. telemetry is the vulnerable C program in this question. It takes a file and prints out its contents, but it expects the file to be specially formatted: the first byte of the file specifies its length, followed by the actual file. The starter files contain a small helper script generate-file-contents. This script takes arbitrary input and outputs the first 127 bytes in the format that telemetry expects: . # Example invocation: $ ./generate-file-contents &lt; \\exampleinput.txt . This helper script always generates safe files to be used with the telemetry program, but nothing prevents you from instead feeding telemetry an arbitrary file of your choice. ",
+    "url": "http://localhost:4000/question2.html#starter-files",
+    "relUrl": "/question2.html#starter-files"
+  },"7": {
+    "doc": "Question 2: Spica",
+    "title": "Your task",
+    "content": "exploit takes the output of your egg script, saves it in a file, and then uses that file as input to telemetry. In other words, when telemetry calls fread, it reads from the output of your egg script. ",
+    "url": "http://localhost:4000/question2.html#your-task",
+    "relUrl": "/question2.html#your-task"
+  },"8": {
+    "doc": "Question 2: Spica",
+    "title": "Debugging",
+    "content": "No input and output redirection needed for this question. debug-exploit automatically feeds the output of your egg script into the C program. You can start running the program in gdb with just run or r. ",
+    "url": "http://localhost:4000/question2.html#debugging",
+    "relUrl": "/question2.html#debugging"
+  },"9": {
+    "doc": "Question 2: Spica",
+    "title": "Deliverables",
+    "content": "A script egg and a writeup. Make sure the script works by running ./exploit and checking that you are able to run cat README and see the next password. ",
+    "url": "http://localhost:4000/question2.html#deliverables",
+    "relUrl": "/question2.html#deliverables"
+  },"10": {
+    "doc": "Question 2: Spica",
+    "title": "Question 2: Spica",
+    "content": " ",
+    "url": "http://localhost:4000/question2.html",
+    "relUrl": "/question2.html"
+  },"11": {
+    "doc": "Question 4: Vega",
+    "title": "Vega (Launched 1999)",
+    "content": "Password: whyishould . | Starter files | Tips | Deliverables | . ",
+    "url": "http://localhost:4000/question4.html#vega-launched-1999",
+    "relUrl": "/question4.html#vega-launched-1999"
+  },"12": {
+    "doc": "Question 4: Vega",
+    "title": "Starter files",
+    "content": "The exploit script in this question is slightly different. The output of egg is used as an environment variable, which means its value is placed at the top of the stack. The output of arg is used as the input to the program. ",
+    "url": "http://localhost:4000/question4.html#starter-files",
+    "relUrl": "/question4.html#starter-files"
+  },"13": {
+    "doc": "Question 4: Vega",
+    "title": "Tips",
+    "content": ". | It might help to read Section 10 of “ASLR Smack &amp; Laugh Reference” by Tilo Müller. (ASLR is disabled for this question, but the idea of the exploit is similar.) . | It might also help to read Section 2.5 (off-by-one vulnerabilities) of the memory safety notes. | Environment variables are stored at the special pointer variable *((char **)environ). To see the address of environment variables in gdb, you can run . (gdb) x/2wx *((char **)environ) (gdb) x/2wx *((char **)environ+1) (gdb) x/2wx *((char **)environ+2) . | It may take some trial-and-error to find the output of egg among the environment variables. One way to confirm you have the right address is to run x/2wx [your address] and check that gdb displays what you put in egg. | There is a slight chance (1 in 256) that your VM customization causes the value of the sfp to end in \\x00, which makes this question much harder to solve. You can resolve this by printing out extra garbage bytes in your egg script (after whatever you were printing before), which pushes the rest of the stack to different addresses. | . ",
+    "url": "http://localhost:4000/question4.html#tips",
+    "relUrl": "/question4.html#tips"
+  },"14": {
+    "doc": "Question 4: Vega",
+    "title": "Deliverables",
+    "content": "Two scripts (egg and arg) and a writeup. Make sure the scripts work by running ./exploit. ",
+    "url": "http://localhost:4000/question4.html#deliverables",
+    "relUrl": "/question4.html#deliverables"
+  },"15": {
+    "doc": "Question 4: Vega",
+    "title": "Question 4: Vega",
+    "content": " ",
+    "url": "http://localhost:4000/question4.html",
+    "relUrl": "/question4.html"
+  },"16": {
+    "doc": "Story",
+    "title": "Story",
+    "content": "Just for fun, no project-relevant content on this page. The world dreams once again. The buildup of propulsion, material and computing technology reaches a critical point and rekindles the fervor of space exploration! The world looks up to the sky and dares to explore the unknown, extend our reaches and expand our understanding. You are part of the ambitious Jupiter exploration program at the Caltopia Space Agency. However, the project is plagued with problems before it even begins. The reckless orbital launches by various space programs over decades has filled lower earth orbit with space debris, preventing the massive Jupiter-bound ships from passing through. CSA must first pave the way to space by deorbiting old unused satellites. The CSA can easily deorbit their own old satellites, but the same cannot be said for satellites launched by the former Gobian Union. The CSA does not have the credentials to assume control, and the agency responsible for these satellites no longer exists. Luckily for you, these old satellites employ the old, insecure technology of a bygone era. Your job is to hack into the decommissioned satellites and remove them from orbit. The agency has faith that you can help forge a new path to Jupiter and beyond. ",
+    "url": "http://localhost:4000/story.html",
+    "relUrl": "/story.html"
+  }
+}
